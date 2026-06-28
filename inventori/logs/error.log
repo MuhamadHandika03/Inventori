@@ -1,0 +1,79 @@
+[2026-06-28 16:45:55] auth: login success admin
+[2026-06-28 16:46:02] auth: login success admin
+[2026-06-28 16:46:03] barang: create BRG-CSRF (CSRF Test) by admin
+[2026-06-28 16:46:03] api: CSRF mismatch from admin (POST)
+[2026-06-28 16:46:04] auth: failed login admin from 127.0.0.1 (attempt 1)
+[2026-06-28 16:46:04] auth: failed login admin from 127.0.0.1 (attempt 2)
+[2026-06-28 16:46:05] auth: failed login admin from 127.0.0.1 (attempt 3)
+[2026-06-28 16:46:05] auth: failed login admin from 127.0.0.1 (attempt 4)
+[2026-06-28 16:46:06] auth: failed login admin from 127.0.0.1 (attempt 5)
+[2026-06-28 16:46:06] auth: rate-limited admin from 127.0.0.1
+[2026-06-28 16:46:37] auth: login success admin
+[2026-06-28 16:47:22] auth: invalid method GET
+[2026-06-28 16:47:24] auth: invalid method GET
+[2026-06-28 16:47:26] api: unauthorized access from 127.0.0.1
+[2026-06-28 16:47:51] auth: invalid method GET
+[2026-06-28 16:47:53] auth: invalid method GET
+[2026-06-28 16:47:55] api: unauthorized access from 127.0.0.1
+[2026-06-28 16:48:47] auth: invalid method GET
+[2026-06-28 16:48:49] auth: invalid method GET
+[2026-06-28 16:48:51] api: unauthorized access from 127.0.0.1
+[2026-06-28 16:49:50] auth: login success admin
+[2026-06-28 16:49:55] auth: login success admin
+[2026-06-28 16:49:56] auth: failed login admin from 127.0.0.1 (attempt 1)
+[2026-06-28 16:50:11] auth: login success admin
+[2026-06-28 16:50:44] auth: login success admin
+[2026-06-28 16:50:46] auth: failed login admin from 127.0.0.1 (attempt 1)
+[2026-06-28 16:50:49] api: unauthorized access from 127.0.0.1
+[2026-06-28 16:50:49] auth: login success admin
+[2026-06-28 16:50:49] api: CSRF mismatch from admin (POST)
+[2026-06-28 16:50:49] api: CSRF mismatch from admin (POST)
+[2026-06-28 16:50:50] api: CSRF mismatch from admin (DELETE)
+[2026-06-28 16:51:15] auth: login success admin
+[2026-06-28 16:51:17] auth: failed login admin from 127.0.0.1 (attempt 1)
+[2026-06-28 16:51:19] api: unauthorized access from 127.0.0.1
+[2026-06-28 16:51:20] auth: login success admin
+[2026-06-28 16:51:20] api: CSRF mismatch from admin (POST)
+[2026-06-28 16:51:20] api: CSRF mismatch from admin (POST)
+[2026-06-28 16:51:21] api: CSRF mismatch from admin (DELETE)
+[2026-06-28 16:52:23] auth: login success admin
+[2026-06-28 16:57:43] auth: login success admin
+[2026-06-28 16:57:51] auth: login success admin
+[2026-06-28 16:57:51] barang: create MTR-001 (Monitor LG 27) by admin
+[2026-06-28 16:58:02] auth: login success admin
+[2026-06-28 16:58:02] barang: softdelete id=3 by admin
+[2026-06-28 16:58:03] barang: restore id=3 by admin
+[2026-06-28 16:58:51] auth: login success admin
+[2026-06-28 16:58:53] api: unauthorized from 127.0.0.1
+[2026-06-28 16:58:55] api: unauthorized from 127.0.0.1
+[2026-06-28 16:58:57] api: unauthorized from 127.0.0.1
+[2026-06-28 16:59:02] api: unauthorized from 127.0.0.1
+[2026-06-28 16:59:16] auth: login success admin
+[2026-06-28 16:59:18] api: unauthorized from 127.0.0.1
+[2026-06-28 16:59:20] api: unauthorized from 127.0.0.1
+[2026-06-28 16:59:22] api: unauthorized from 127.0.0.1
+[2026-06-28 16:59:32] auth: login success admin
+[2026-06-28 16:59:33] barang: create MTR-002 (LG Monitor 27) by admin
+[2026-06-28 16:59:33] barang: softdelete id=4 by admin
+[2026-06-28 16:59:33] barang: restore id=4 by admin
+[2026-06-28 17:00:24] auth: login success admin
+[2026-06-28 17:00:26] api: unauthorized from 127.0.0.1
+[2026-06-28 17:00:28] api: unauthorized from 127.0.0.1
+[2026-06-28 17:00:30] api: unauthorized from 127.0.0.1
+[2026-06-28 17:00:42] auth: login success admin
+[2026-06-28 17:00:42] api: CSRF mismatch admin (POST)
+[2026-06-28 17:00:43] api: CSRF mismatch admin (DELETE)
+[2026-06-28 17:00:53] auth: login success admin
+[2026-06-28 17:00:54] barang: create MTR-003 (FinalCheck) by admin
+[2026-06-28 17:00:55] barang: softdelete id=5 by admin
+[2026-06-28 17:00:55] barang: restore id=5 by admin
+[2026-06-28 17:10:41] auth: login success admin
+[2026-06-28 17:11:07] auth: login success admin
+[2026-06-28 17:11:09] api: unauthorized from 127.0.0.1
+[2026-06-28 17:11:11] api: unauthorized from 127.0.0.1
+[2026-06-28 17:11:33] auth: login success admin
+[2026-06-28 17:11:43] auth: login success admin
+[2026-06-28 17:11:59] auth: login success admin
+[2026-06-28 17:11:59] auth: login success admin
+[2026-06-28 17:11:59] api: unauthorized from 127.0.0.1
+[2026-06-28 17:12:27] auth: login success admin
