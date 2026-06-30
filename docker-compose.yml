@@ -1,52 +1,39 @@
 services:
-  web:
-    build: .
-    container_name: inventori-web
-    ports:
-      - "8080:80"
-    volumes:
-      - ./inventori:/var/www/html
-    environment:
-      - DB_HOST=db
-      - DB_USER=root
-      - DB_PASS=rootpass
-      - DB_NAME=inventori
-    depends_on:
-      db:
-        condition: service_healthy
-    restart: unless-stopped
-
   db:
-    image: mysql:8.0
+    image: mariadb:10.11
     container_name: inventori-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: inventori
+      MYSQL_USER: inventori_user
+      MYSQL_PASSWORD: inventori_pass
     ports:
       - "3307:3306"
-    environment:
-      - MYSQL_ROOT_PASSWORD=rootpass
-      - MYSQL_DATABASE=inventori
     volumes:
       - db_data:/var/lib/mysql
       - ./inventori/database.sql:/docker-entrypoint-initdb.d/01-schema.sql
-      - ./inventori/setup.php:/var/www/html/setup.php
+      - ./inventori/02-seed.sql:/docker-entrypoint-initdb.d/02-seed.sql
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      test: ["CMD", "healthcheck.sh", "--connect"]
       interval: 5s
       timeout: 5s
       retries: 10
-    restart: unless-stopped
 
-  phpmyadmin:
-    image: phpmyadmin:latest
-    container_name: inventori-pma
-    ports:
-      - "8081:80"
-    environment:
-      - PMA_HOST=db
-      - PMA_USER=root
-      - PMA_PASSWORD=rootpass
-    depends_on:
-      - db
+  web:
+    build: ./inventori
+    container_name: inventori-web
     restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      DB_HOST: db
+      DB_USER: inventori_user
+      DB_PASS: inventori_pass
+      DB_NAME: inventori
+    depends_on:
+      db:
+        condition: service_healthy
 
 volumes:
   db_data:

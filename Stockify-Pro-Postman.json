@@ -1,0 +1,187 @@
+{
+  "info": {
+    "name": "Stockify Pro API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "https://uneven-pyrotechnically-orion.ngrok-free.dev" },
+    { "key": "csrf_token", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "1. Login",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const json = pm.response.json();",
+              "if (json.csrf_token) {",
+              "  pm.collectionVariables.set('csrf_token', json.csrf_token);",
+              "  console.log('CSRF token saved:', json.csrf_token);",
+              "}"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"admin123\"\n}"
+        },
+        "url": "{{base_url}}/auth.php"
+      }
+    },
+    {
+      "name": "2. Lihat Barang",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/api.php"
+      }
+    },
+    {
+      "name": "3. Lihat Kategori",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/api.php?action=kategori"
+      }
+    },
+    {
+      "name": "4. Riwayat Transaksi",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/api.php?action=riwayat"
+      }
+    },
+    {
+      "name": "5. Tempat Sampah",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/api.php?action=trash"
+      }
+    },
+    {
+      "name": "6. Tambah Barang",
+      "request": {
+        "method": "POST",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"},
+          {"key": "X-CSRF-Token", "value": "{{csrf_token}}"}
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"kategori_id\": 1,\n  \"name\": \"Monitor LG 24\\\"\",\n  \"stock\": 10,\n  \"unit\": \"pcs\",\n  \"price\": 1500000\n}"
+        },
+        "url": "{{base_url}}/api.php"
+      }
+    },
+    {
+      "name": "7. Edit Barang",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"},
+          {"key": "X-CSRF-Token", "value": "{{csrf_token}}"}
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"kategori_id\": 1,\n  \"name\": \"Monitor LG 24\\\" (Updated)\",\n  \"stock\": 15,\n  \"unit\": \"pcs\",\n  \"price\": 1400000\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api.php?id=1",
+          "query": [{"key": "id", "value": "1"}]
+        }
+      }
+    },
+    {
+      "name": "8. Hapus Barang (Soft)",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"},
+          {"key": "X-CSRF-Token", "value": "{{csrf_token}}"}
+        ],
+        "url": {
+          "raw": "{{base_url}}/api.php?id=1",
+          "query": [{"key": "id", "value": "1"}]
+        }
+      }
+    },
+    {
+      "name": "9. Pulihkan Barang",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"},
+          {"key": "X-CSRF-Token", "value": "{{csrf_token}}"}
+        ],
+        "url": {
+          "raw": "{{base_url}}/api.php?action=restore&id=1",
+          "query": [{"key": "action", "value": "restore"}, {"key": "id", "value": "1"}]
+        }
+      }
+    },
+    {
+      "name": "10. Hapus Permanen",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"},
+          {"key": "X-CSRF-Token", "value": "{{csrf_token}}"}
+        ],
+        "url": {
+          "raw": "{{base_url}}/api.php?action=force&id=1",
+          "query": [{"key": "action", "value": "force"}, {"key": "id", "value": "1"}]
+        }
+      }
+    },
+    {
+      "name": "11. Tambah Kategori",
+      "request": {
+        "method": "POST",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"},
+          {"key": "X-CSRF-Token", "value": "{{csrf_token}}"}
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Mouse Gaming\",\n  \"code_prefix\": \"MGS\"\n}"
+        },
+        "url": "{{base_url}}/api.php?action=kategori"
+      }
+    },
+    {
+      "name": "12. Mutasi Stok (Masuk)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"},
+          {"key": "X-CSRF-Token", "value": "{{csrf_token}}"}
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"barang_id\": 1,\n  \"jenis_transaksi\": \"masuk\",\n  \"jumlah\": 5,\n  \"keterangan\": \"Restock dari supplier\"\n}"
+        },
+        "url": "{{base_url}}/api.php?action=transaksi"
+      }
+    },
+    {
+      "name": "13. Mutasi Stok (Keluar)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"},
+          {"key": "X-CSRF-Token", "value": "{{csrf_token}}"}
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"barang_id\": 1,\n  \"jenis_transaksi\": \"keluar\",\n  \"jumlah\": 2,\n  \"keterangan\": \"Peminjaman staff\"\n}"
+        },
+        "url": "{{base_url}}/api.php?action=transaksi"
+      }
+    }
+  ]
+}

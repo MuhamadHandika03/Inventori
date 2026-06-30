@@ -139,7 +139,7 @@ include 'components/navbar.php';
         await fetchInventory();
         await fetchRiwayat();
         if (role === 'admin') await loadKategoriDropdown();
-        if (role === 'staff') { populateDropdownBarang(); }
+        populateDropdownBarang();
     }
 
     let kategoriList = [];
