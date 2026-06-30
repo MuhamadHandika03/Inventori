@@ -151,7 +151,7 @@ include 'components/navbar.php';
         kategoriList.forEach(k => {
             const opt = document.createElement('option');
             opt.value = k.id;
-            opt.textContent = `${k.name} (contoh: ${k.code_prefix}-001)`;
+            opt.textContent = k.name;
             sel.appendChild(opt);
         });
     }

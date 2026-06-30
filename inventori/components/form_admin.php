@@ -14,7 +14,7 @@
         </div>
         <div>
             <label class="block text-slate-700 text-xs font-semibold mb-1.5">Nama Barang</label>
-            <input type="text" id="item-name" required class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 text-sm" placeholder="Contoh: Monitor Asus 24''">
+            <input type="text" id="item-name" required class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 text-sm" placeholder="Monitor Asus 24''">
         </div>
         <div class="grid grid-cols-2 gap-4">
             <div>

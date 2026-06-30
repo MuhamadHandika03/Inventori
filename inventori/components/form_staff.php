@@ -28,7 +28,7 @@
         </div>
         <div>
             <label class="block text-slate-700 text-xs font-semibold mb-1.5">Keterangan / Deskripsi</label>
-            <input type="text" id="mutasi-keterangan" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none text-sm" placeholder="Contoh: Kiriman supplier / restock">
+            <input type="text" id="mutasi-keterangan" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none text-sm" placeholder="Kiriman supplier / restock">
         </div>
         <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2.5 rounded-xl text-sm shadow-md shadow-emerald-100">
             <i class="fa-solid fa-circle-check mr-1"></i> Eksekusi Mutasi
